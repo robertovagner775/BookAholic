@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+@font-face {
+    font-family: ;
+    src: url();
+}
+
+body {
+    
+    height: 100vh;
+    background: linear-gradient(45deg, #FF5847, #E83551, #E86135);
+    background-repeat: no-repeat;
+}
+.box-img{
+    text-align: center;
+
+}
+h3 {
+    font-size: 35px;
+    text-align: center;
+}
+.container-sing {
+    
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-sing form {
+    background-color: #e7e7f7;
+    border-radius: 15px;
+    padding: 32px;
+    width: 325px;
+   
+    
+}
+
+
+.input-box {
+    position: relative;
+    margin: 20px 0;
+    width: 280px;
+
+}
+
+.input-box label {
+    position: absolute;
+    left: 10px;
+    bottom: 12px;
+    transition: 0.5s;
+
+}
+
+div.input-box .input-text:focus ~ label {
+    position: absolute;
+    left: 10px;
+    bottom: 25px;
+    background-color: #e7e7f7;
+    color: #8976f8;
+    
+}
+div.input-box .input-text:focus {
+    border: solid 0.5px #8976f8;
+}
+.container-sing div .input-text {
+    height: 25px;
+    padding: 8px;
+    width: 100%;
+    background-color: #e7e7f7;
+    
+    border: solid 0.5px;
+}
+
+.container-sing div .logo-img {
+    width: 248px;
+    height: 248px;
+
+
+}
+a { text-decoration: none;}
+
+.button-submit{
+    background-color: #E83551;
+    outline: 0;
+    padding: 16px;
+    width: 130px;
+    margin-top: 8px;
+    margin-left: 3px;
+    
+
+}
+.box-buttons{
+    width: 300px;
+   
+
+    
+    
+}
+
+.register{
+    background-color: #fff;
+    color: #E83551;
+    border: solid 0.5px #E83551;
+    width: 160px;
+    outline: 0;
+    padding: 16px;
+ 
+    margin-top: 8px;
+}
+.button-submit:hover{
+    background-color: #d64258;
+    
+    
+    
+}
+.box-icons  {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    width: 300px;
+    background-color: #fff;
+ 
+    border-radius: 8px;
+}
+
+.box-icons a {
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    padding: 25px;
+    transition: 0.5s;
+}
+
+div.box-icons  a:hover  {
+    color: #8976f8;
+ 
+}
+
+div.box-icons:hover {
+    background-color: #cedae6;
+}
+
+
+textarea:focus, input:focus, select:focus, button {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+
+input {
+    border: none;
+}

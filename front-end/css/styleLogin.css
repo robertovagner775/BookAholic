@@ -1,3 +1,12 @@
+:root {
+
+    --background-color-white: #e7e7f7;
+    --linear-color-primary:  #E83551;
+    --linear-color-secundary:  #FF5847;
+    --linear-color-tree:  #E86135;
+    --color-border-blue: #3f7dda;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,15 +15,11 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
-@font-face {
-    font-family: ;
-    src: url();
-}
 
 body {
     
     height: 100vh;
-    background: linear-gradient(45deg, #FF5847, #E83551, #E86135);
+    background: linear-gradient(45deg, var(--linear-color-secundary), var(--linear-color-primary), var(--linear-color-tree));
     background-repeat: no-repeat;
 }
 .box-img{
@@ -35,40 +40,57 @@ h3 {
 }
 
 .container-sing form {
-    background-color: #e7e7f7;
+    background-color: var(--background-color-white);
     border-radius: 15px;
     padding: 32px;
-    width: 325px;
+    
    
     
 }
-
 
 .input-box {
     position: relative;
     margin: 20px 0;
     width: 280px;
+    
+    
 
+}
+
+.input-box i {
+    position: absolute;
+    left: 260px;
+    font-size: large;
+    bottom: 10px;
+    
+}
+.input-box .span-error {
+    position: absolute;
+
+  
+    
 }
 
 .input-box label {
     position: absolute;
     left: 10px;
     bottom: 12px;
-    transition: 0.5s;
-
+    transition: 0.25s;
+    
 }
 
 div.input-box .input-text:focus ~ label {
     position: absolute;
     left: 10px;
-    bottom: 25px;
-    background-color: #e7e7f7;
-    color: #8976f8;
+    bottom: 32px;
+    padding: 4px;
+    font-size: 14px;
+    background-color: var(--background-color-white);
+    color: var(--color-border-blue);
     
 }
 div.input-box .input-text:focus {
-    border: solid 0.5px #8976f8;
+    border: solid 0.5px var(--color-border-blue);
 }
 .container-sing div .input-text {
     height: 25px;
@@ -88,12 +110,13 @@ div.input-box .input-text:focus {
 a { text-decoration: none;}
 
 .button-submit{
-    background-color: #E83551;
+    background-color: var(--linear-color-primary);
     outline: 0;
     padding: 16px;
     width: 130px;
     margin-top: 8px;
     margin-left: 3px;
+    cursor: pointer;
     
 
 }
@@ -107,11 +130,12 @@ a { text-decoration: none;}
 
 .register{
     background-color: #fff;
-    color: #E83551;
-    border: solid 0.5px #E83551;
+    color: var(--linear-color-primary);
+    border: solid 0.5px var(--linear-color-primary);
     width: 160px;
     outline: 0;
     padding: 16px;
+    cursor: pointer;
  
     margin-top: 8px;
 }
@@ -126,6 +150,7 @@ a { text-decoration: none;}
     align-items: center;
     margin-top: 16px;
     width: 300px;
+    box-shadow: 0.5px 1px 2px gray;
     background-color: #fff;
  
     border-radius: 8px;
@@ -146,7 +171,7 @@ div.box-icons  a:hover  {
 }
 
 div.box-icons:hover {
-    background-color: #cedae6;
+    background-color: #bfd1e2;
 }
 
 

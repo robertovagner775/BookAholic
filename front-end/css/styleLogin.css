@@ -1,6 +1,7 @@
 :root {
-
     --background-color-white: #e7e7f7;
+    --background-color-white-secundary: #f9f9f9;
+    
     --linear-color-primary:  #E83551;
     --linear-color-secundary:  #FF5847;
     --linear-color-tree:  #E86135;
@@ -19,8 +20,25 @@
 body {
     
     height: 100vh;
-    background: linear-gradient(45deg, var(--linear-color-secundary), var(--linear-color-primary), var(--linear-color-tree));
+    background: linear-gradient(45deg, var(--linear-color-secundary), var(--linear-color-primary), var(--linear-color-tree), #e26b5f);
+    background-size: 300% 300%;
+    animation: colors 10s ease infinite;
     background-repeat: no-repeat;
+}
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 75% 50%;
+    }
+    50% {
+        background-position: 100% 75%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 .box-img{
     text-align: center;
@@ -40,7 +58,7 @@ h3 {
 }
 
 .container-sing form {
-    background-color: var(--background-color-white);
+    background-color: var(--background-color-white-secundary);
     border-radius: 15px;
     padding: 32px;
     
@@ -52,16 +70,40 @@ h3 {
     position: relative;
     margin: 20px 0;
     width: 280px;
+    background-color: var(--background-color-white-secundary);
     
     
 
 }
+.input-box.success .input-text {
+    border: 1.5px solid 	#3CB371;
 
+}
+
+.input-box.error .input-text {
+    border: 1.5px solid #B22222;
+}
+
+.input-box.error i.img-error{
+    visibility: visible;
+}
+.input-box.success i.img-success{
+    visibility: visible;
+}
+.input-box.error span {
+    visibility: visible;
+    font-weight: bolder;
+    color: #B22222;
+}
+.input-box span {
+    visibility: hidden;
+}
 .input-box i {
     position: absolute;
     left: 260px;
     font-size: large;
     bottom: 10px;
+    visibility: hidden;
     
 }
 .input-box .span-error {
@@ -69,6 +111,15 @@ h3 {
 
   
     
+}
+
+div a.forget {
+    margin-left:  18px;
+    margin-top: 5px;
+}
+
+div input[type=checkbox] {
+    margin-top: 5px;
 }
 
 .input-box label {
@@ -79,24 +130,26 @@ h3 {
     
 }
 
-div.input-box .input-text:focus ~ label {
+div.input-box .input-text:focus ~ label,
+div.input-box .input-text:valid ~ label {
     position: absolute;
     left: 10px;
     bottom: 32px;
     padding: 4px;
     font-size: 14px;
-    background-color: var(--background-color-white);
+    background-color: var(--background-color-white-secundary);
     color: var(--color-border-blue);
     
 }
-div.input-box .input-text:focus {
+div.input-box .input-text:focus,
+div.input-box .input-text:valid {
     border: solid 0.5px var(--color-border-blue);
 }
 .container-sing div .input-text {
     height: 25px;
     padding: 8px;
     width: 100%;
-    background-color: #e7e7f7;
+    background-color: var(--background-color-white-secundary);
     
     border: solid 0.5px;
 }

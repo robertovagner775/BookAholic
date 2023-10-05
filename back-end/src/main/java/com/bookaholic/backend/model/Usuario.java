@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
@@ -12,6 +13,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Table(name = "usuario")
 @Entity(name = "usuario")
 public class Usuario {
     

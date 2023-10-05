@@ -2,6 +2,7 @@ const form = document.getElementById("form")
 const username = document.getElementById("username")
 const email = document.getElementById("email")
 const password = document.getElementById("password")
+const spanError = document.querySelector(".message-error")
 const confirmPassword = document.getElementById("confirmPassword")
 
 
@@ -11,36 +12,47 @@ form.addEventListener("submit", (e) => {
     if(campsValidate()) {
         const formData = new FormData(form)
         const data = Object.fromEntries(formData)
+        const url = "http://localhost:8080/usuario"
 
-        console.log(data)
-        fetch("http://localhost:8080/usuario", {
+        fetch(url, {
+            method: 'POST',
             headers: {
                 'Accept' : 'application/json',
                 'Content-Type' : 'application/json'
             },
-            method: 'POST',
 
             body: JSON.stringify({
                 id: null,
                 username: username.value,
                 email: email.value,
                 senha: password.value
-                })
-        }) 
+                }),
 
+            
+        }).then(response => response.json())
+        .then(data => {
+            setErrorInsert(spanError, data["message"])
+            if(data["email"] != null){
+                location.href = 'loginPage.html'
+            }
+        })
+
+        
         
     } else {
 
     }
 })
 
+function setErrorInsert(spanError, mensagem) {
+    spanError.innerHTML = mensagem;
+    spanError.style.display = 'block'
+    spanError.style.color = '#B22222'
+    spanError.style.textAlign = 'center'
+
+}
 function campsValidate() {
     var test = false
-    const usernameValue = username.value.trim()
-    const emailValue = email.value.trim()
-    const passwordValue = password.value.trim()
-    const confirmPasswordValue = confirmPassword.value.trim()
-   
     test = checkUsername(username)
     test = checkEmail(email)
     test = checkPasword(password)

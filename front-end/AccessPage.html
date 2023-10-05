@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleLogin.css">
+    <title>Sing-in in plataform</title>
+</head>
+<body>
+    <div class="container-sing">
+       
+            <div class="box-img">
+                <img class="logo-img" src="imgs/BookAholic-removebg-preview.png" alt="">
+                <h3>Welcome</h3>
+
+                <h1>Bem vindo </h1>
+
+                <p id="username"></p>
+                <p id="Email"></p>
+            </div>
+            
+    </div>
+
+    <script >
+        setMessage()
+        function setMessage(){
+            document.getElementById("username").innerHTML = sessionStorage.getItem('username')
+            document.getElementById("Email").innerHTML = sessionStorage.getItem('email')
+        }
+    </script>
+</body>
+</html>
